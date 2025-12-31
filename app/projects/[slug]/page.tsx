@@ -10,14 +10,15 @@ export async function generateStaticParams() {
   }));
 }
 
-export default function ProjectPage({ params }: { params: { slug: string } }) {
-  const project = getProjectBySlug(params.slug);
+export default async function ProjectPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const project = getProjectBySlug(slug);
 
   if (!project) {
     notFound();
   }
 
-  const relatedProjects = getRelatedProjects(params.slug, 3);
+  const relatedProjects = getRelatedProjects(slug, 3);
 
   const categoryColors = {
     backend: "bg-purple-600",
