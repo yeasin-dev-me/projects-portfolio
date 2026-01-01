@@ -1,7 +1,5 @@
-import Link from "next/link";
 import { projectsData } from "@/data/projects";
 import ProjectCard from "@/components/ProjectCard";
-import ProjectFilters from "@/components/ProjectFilters";
 
 export default function Home() {
   const backendProjects = projectsData.filter((p) => p.category === "backend");
@@ -14,7 +12,7 @@ export default function Home() {
       <section className="py-24 px-4 bg-gradient-to-b from-[#0a0a0a] via-[#111111] to-[#0a0a0a]">
         <div className="container mx-auto max-w-6xl text-center">
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 animate-fade-in">
-            <span className="text-white">Hi, I'm </span>
+            <span className="text-white">Hi, I&apos;m </span>
             <span className="gradient-text">Yeasin Arafat</span>
           </h1>
           <h2 className="text-2xl md:text-3xl text-gray-300 font-light mb-8 animate-slide-up">
@@ -25,14 +23,11 @@ export default function Home() {
             Focused on delivering results that matter.
           </p>
 
-          {/* Social / Contact Links Placeholder */}
+          {/* Social Links */}
           <div className="flex justify-center gap-6 animate-slide-up delay-200">
             <a href="https://github.com/yeasin-dev-me" target="_blank" rel="noopener noreferrer" className="btn btn-outline">
               GitHub
             </a>
-            <Link href="mailto:contact@yeasindev.me" className="btn btn-primary">
-              Contact Me
-            </Link>
           </div>
         </div>
       </section>
